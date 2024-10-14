@@ -1,0 +1,116 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+   --index: calc(1vw + 1vh);
+   --transition: 1.5s cubic-beizer(.05, .5, 0, 1);
+}
+@font-face {
+    font-family: kamerik-3d;
+    src: url(../fonts/kamerik205-heavy.woff2);
+    font-weight: 900;
+}
+@font-face {
+    font-family: merrieweathter;
+    src: url(../fonts/merriweather-regular-italic.woff2);
+}
+body{
+    background-color: black;
+    color: azure;
+    font-family: kamerik-3d;
+   
+}
+.logo {
+   width: calc(var(--index)*7.9 );
+   height: calc(var(--index)*10 );
+   background-repeat: no-repeat;
+   position: absolute;
+   left: 50%;
+   top: 6%;
+   z-index: 1;
+}
+.layers{
+    perspective:2000px;
+    overflow: hidden;
+
+}
+.layers__container{
+    height: 100vh;
+    min-height: 100vh;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform 1s ease(var(--transition));
+}
+.layers__item{
+    position: absolute;
+    top: -5vh;
+    left: -5vh;
+    right: -5vh;
+    bottom: -5vh;
+    background-size: cover;
+    background-position: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    
+}
+.layer1{
+    transform: translateZ(-55px) scale(1.06);
+}
+.layer2{
+    transform: translateZ(200px) scale(.88);
+}
+.layer3{
+    transform: translateZ(250px) scale(.88);
+}
+.layer4{
+    transform: translateZ(190px) scale(.88);
+}
+.layer5{
+    transform: translateZ(240px) scale(.88);
+}
+.layer6{
+    transform: translateZ(300px) scale(.88);
+}
+.hero-content{
+    font-size: calc(var(--index) * 2);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: calc(var(--index) * -.1);
+}
+.hero-content span{
+    display: block;
+}
+.hero-content__p{
+    font-family: merriweather;
+    letter-spacing: normal;
+    font-size: calc(var(--index) * 2.3)
+    
+}
+.Start{
+    font-family: Arial;
+    font-weight: 600;
+    text-transform: uppercase ;
+    font-size: calc(var(--index) * 1);
+    letter-spacing:  calc(var(--index) * .20);
+    padding: 30px 40px;
+    background-color: transparent;
+    color: rgb(64, 193, 150 /.8);
+    border-radius: 40px;
+    border: solid;
+    outline: none;
+    cursor: pointer;
+}
+.layer4, .layer5, .layer6{
+    pointer-events: none;
+}
+a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
